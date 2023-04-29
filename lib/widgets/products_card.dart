@@ -1,15 +1,20 @@
+// ignore_for_file: must_be_immutable
+
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CharcterCard extends StatelessWidget {
   String name;
   String image;
   String gender;
+  String id;
 
   CharcterCard({
     super.key,
     required this.gender,
     required this.image,
     required this.name,
+    required this.id,
   });
 
   @override
@@ -29,7 +34,7 @@ class CharcterCard extends StatelessWidget {
           SizedBox(
             height: 150,
             width: double.infinity,
-            child: Image.asset(image),
+            child: CachedNetworkImage(imageUrl: image),
           ),
           Text(name),
           Text("Gender : $gender"),

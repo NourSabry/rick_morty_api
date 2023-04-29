@@ -10,6 +10,7 @@ void dependancyInjection() {
 }
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   dependancyInjection();
   runApp(const MyApp());
 }
